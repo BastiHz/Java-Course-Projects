@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'henz.sebastian'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
+
+test {
+}
+
+apply plugin: 'application'
+mainClassName = 'tictactoe.Main'
+
+run {
+    standardInput = System.in
+}
