@@ -1,8 +1,17 @@
-### This repository is a collection of my projects for the [Java track](https://hyperskill.org/tracks/1) at [Jetbrains Academy](https://www.jetbrains.com/academy).
+## Java Course Projects
+A collection of my projects for the [Java track](https://hyperskill.org/tracks/1) at [JetBrains Academy](https://www.jetbrains.com/academy). These are the main tasks from the course without the exercises and with simplified folder structures. This makes it possible to run them from the command line without the need for the JetBrains IDEA ide.
 
+
+### How to run
+These apps were developed with Java 11. I did not test them on other Java versions. That means you need the Java 11 JDK on your path.
+1. Go into a project directory.
+2. Run `./gradlew run` on linux or `.\gradlew run` on windows.
+
+I advise against importing this repository from GitHub as one ide project. This may confuse the ide and result in very long loading times. Instead you should clone the whole repository and open only the subdirectories as projects.
+
+
+### Projects
 This list is sorted chronologically. The projects at the top are my first ever Java apps and are therefore very simple and probably written in a bad and inefficient style. Please take that into account when checking out the code.
-
-**I advise against importing this repository as one IDEA project.** This may confuse the ide and result in very long loading times. Instead you should clone the whole repository and open only the subdirectories as projects. 
 
 - **Coffee Machine**  
 A simple terminal app which simulates a coffee machine. You can order a hot beverage, inspect and fill up the stored ingredients, and collect the money.
