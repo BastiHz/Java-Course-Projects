@@ -1,9 +1,12 @@
 plugins {
     id 'java'
+	id 'application'
 }
 
 group 'henz.sebastian'
 version '1.0'
+sourceCompatibility = '11'
+mainClassName = 'tictactoe.Main'
 
 repositories {
     mavenCentral()
@@ -14,9 +17,6 @@ dependencies {
 
 test {
 }
-
-apply plugin: 'application'
-mainClassName = 'tictactoe.Main'
 
 run {
     standardInput = System.in
