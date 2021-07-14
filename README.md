@@ -35,5 +35,5 @@ A REST API built with Spring Boot. It can register and authenticate users. Users
 In this project I am using Spring Boot to learn how to combine the backend and frontend by building a platform where users can share code snippets. You can access it in the browser to create new code snippets, see the latest codes and access specific codes by uuid. Codes are optionally access restricted by number of views or with a time limit.
 - **Car Sharing**  
 A simple command line app using SQL.
-- **Recipes**  
-A Spring Boot app that provides a REST api to manage recipes in a database. You can register users, save recipes, get recipes, and modify them. Only a user that created a recipe can modify or delete it. Everyone can search for recipe names or categories.
+- **[Recipes](Recipes)**  
+A Spring Boot app that provides a REST api to manage recipes in a database. You can register users, save recipes, get recipes, and modify them.
