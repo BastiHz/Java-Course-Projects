@@ -8,8 +8,10 @@ plugins {
 group = 'henz.sebastian'
 version = '1.0'
 sourceCompatibility = '11'
-mainClassName = "recipes.RecipesApplication"
 
+application {
+    mainClass = 'recipes.RecipesApplication'
+}
 
 configurations {
 	compileOnly {

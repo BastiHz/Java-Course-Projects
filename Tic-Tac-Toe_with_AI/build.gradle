@@ -6,7 +6,10 @@ plugins {
 group 'henz.sebastian'
 version '1.0'
 sourceCompatibility = '11'
-mainClassName = 'tictactoe.Main'
+
+application {
+    mainClass = 'tictactoe.Main'
+}
 
 repositories {
     mavenCentral()
