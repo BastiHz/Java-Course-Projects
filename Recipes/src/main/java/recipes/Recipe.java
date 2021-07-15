@@ -11,6 +11,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -18,11 +19,9 @@ import java.time.LocalDateTime;
 @Entity
 public class Recipe {
 
-    // I would prefer to use UUIDs but the course tests require ints.
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @JsonIgnore  // don't return the id
-    private int id;
+    private UUID id;
 
     @NotNull
     @NotBlank

@@ -9,6 +9,7 @@ import javax.validation.Valid;
 import java.security.Principal;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @RestController
 @RequestMapping(path = "/api/recipe")
@@ -21,22 +22,22 @@ public class RecipeController {
     private UserRepository userRepository;
 
     @GetMapping(path = "/{id}")
-    public Recipe getRecipeById(@PathVariable final int id) {
+    public Recipe getRecipeById(@PathVariable final UUID id) {
         return recipeRepository.findById(id).orElseThrow();
     }
 
     @PostMapping(path = "/new")
-    public Map<String, Integer> addNewRecipe(@RequestBody @Valid Recipe recipe,
+    public Map<String, UUID> addNewRecipe(@RequestBody @Valid final Recipe recipe,
                                           final Principal principal) {
         final User user = userRepository.findByEmail(principal.getName());
         recipe.setUser(user);
-        recipe = recipeRepository.save(recipe);
+        recipeRepository.save(recipe);
         return Map.of("id", recipe.getId());
     }
 
     @DeleteMapping(path = "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteRecipeById(@PathVariable final int id,
+    public void deleteRecipeById(@PathVariable final UUID id,
                                  final Principal principal) {
         final User user = userRepository.findByEmail(principal.getName());
         final Recipe recipe = recipeRepository.findById(id).orElseThrow();
@@ -48,7 +49,7 @@ public class RecipeController {
 
     @PutMapping(path = "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void changeRecipe(@PathVariable final int id,
+    public void changeRecipe(@PathVariable final UUID id,
                              @RequestBody @Valid final Recipe newRecipe,
                              final Principal principal) {
         final User user = userRepository.findByEmail(principal.getName());

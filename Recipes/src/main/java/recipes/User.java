@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.Collection;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -19,12 +20,9 @@ import java.util.Collection;
 @Entity
 public class User implements UserDetails {
 
-    // Identify users by id that is not the email address. This provides
-    // the possibility to later allow users to change their email.
-    // I would prefer to use UUIDs but the course tests require ints.
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private UUID id;
 
     @NotNull
     @NotBlank
