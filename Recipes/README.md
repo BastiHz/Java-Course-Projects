@@ -6,20 +6,23 @@ A Spring Boot application that provides a REST API for a database containing rec
 
 The server listens on `http://localhost:8080`.
 
-Viewing recipes is possible without authentication. But you need to register a user to add, update or delete recipes.
-Only the user who added a recipe can modify or delete it. The authentication method used is basic authentication.
+You need to register a user to interact with the recipes database.
+All users can read all recipes, but only the user who added a recipe 
+can modify or delete it. The authentication method used is basic authentication.
 
 Bold values in the paths are placeholders and must be replaced by the appropriate strings before sending the requests.
 
-| Action | Method | Path | Message Body | Needs Authentication | Response |
-| --- | --- | --- | --- | --- | --- |
+| Action | Method | Path | Message Body | Response |
+| --- | --- | --- | --- | --- |
 | Register a user | POST | /api/register | JSON with email and password, see below | no | 200 OK |
-| Add a recipe | POST | /api/recipe/new | recipe JSON, see below | yes | JSON with the recipe ID |
-| View a recipe | GET | /api/recipe/**id** |  | no | the recipe JSON |
-| Modify a recipe | PUT | /api/recipe/**id** | the new recipe JSON | yes | 204 No Content |
-| Delete a recipe | DELETE | /api/recipe/**id** |  | yes | 204 No Content |
-| List all recipes from a category | GET | /api/recipe/search?category=**category** |  | no | JSON array with recipes, sorted chronologically |
-| List all recipes with names containing a string | GET | /api/recipe/search?name=**name** |  | no | JSON array with recipes, sorted chronologically |
+| Add a recipe | POST | /api/recipe/new | recipe JSON, see below | JSON with the recipe ID |
+| View a recipe | GET | /api/recipe/**id** |  | the recipe JSON |
+| Modify a recipe | PUT | /api/recipe/**id** | the new recipe JSON | 204 No Content |
+| Delete a recipe | DELETE | /api/recipe/**id** |  | 204 No Content |
+| List all recipes | GET | /api/recipe/all |  | JSON array with recipes |
+| List all of your recipes | GET | /api/recipe/my-recipes |  | JSON array with recipes |
+| List all recipes from a category | GET | /api/recipe/search?category=**category** |  | JSON array with recipes |
+| List all recipes with names containing a string | GET | /api/recipe/search?name=**name** |  | JSON array with recipes |
 
 This is an example message body for registering a user. The email must contain "@" and "." and the password must be at least 8 characters long.
 ```

@@ -71,4 +71,16 @@ public class RecipeController {
     public List<Recipe> searchByNameContaining(@RequestParam final String name) {
         return recipeRepository.findByNameContainingIgnoreCaseOrderByDateDesc(name);
     }
+
+
+    @GetMapping(path = "/all")
+    public List<Recipe> getAllRecipes() {
+        return recipeRepository.findAll();
+    }
+
+    @GetMapping(path = "/my-recipes")
+    public List<Recipe> getAllRecipesOfUser(final Principal principal) {
+        final User user = userRepository.findByEmail(principal.getName());
+        return recipeRepository.findByUserOrderByDateDesc(user);
+    }
 }

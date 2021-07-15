@@ -9,6 +9,8 @@ import java.util.UUID;
 @Repository
 public interface RecipeRepository extends CrudRepository<Recipe, UUID> {
 
+    List<Recipe> findAll();
     List<Recipe> findByCategoryIgnoreCaseOrderByDateDesc(String category);
     List<Recipe> findByNameContainingIgnoreCaseOrderByDateDesc(String name);
+    List<Recipe> findByUserOrderByDateDesc(User user);
 }
