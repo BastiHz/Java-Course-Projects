@@ -6,10 +6,10 @@ A collection of my projects for the [Java track](https://hyperskill.org/tracks/1
 These apps were developed with Java 11. I did not test them on other Java versions.
 That means you need the Java 11 JDK on your path.
 1. Go into a project directory.
-2. Run `./gradlew run` on linux or `.\gradlew run` on windows.
+2. Run `./gradlew run` on Linux or `.\gradlew run` on Windows.
 
 I advise against importing this repository from GitHub as one ide project. This may confuse 
-the ide and result in very long loading times. Instead you should clone the whole repository 
+the ide and result in very long loading times. Instead, you should clone the whole repository 
 and open only the subdirectories as projects.
 
 
@@ -31,10 +31,9 @@ This application sorts your inputs either naturally or by count. It can read the
 4. **[Smart Calculator](Smart_Calculator)**  
 A calculator for the console. It supports addition, subtraction, multiplication, integer division, 
    and exponentiation. You can assign variables and group operations using parentheses.
-5. **Text Editor**  
-This is a simple text editor with a Swing gui. It lets you load and save your text to files. 
-   It also has a text search function with an optional regex mode. The search runs in a 
-   separate thread to avoid interrupting the main app.
+5. **[Text Editor](Text_Editor)**  
+This is a basic text editor with a Swing GUI. It lets you load and save your text to files. 
+   It also has a text search function with an optional regex mode.
 6. **Game of Life**  
 Conway's Game of Life cellular automaton. With a Swing gui that enables the user to start 
    and stop the simulation and step through it. The game and the gui run in separate threads.
