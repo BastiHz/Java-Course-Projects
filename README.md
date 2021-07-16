@@ -34,9 +34,10 @@ A calculator for the console. It supports addition, subtraction, multiplication,
 5. **[Text Editor](Text_Editor)**  
 This is a basic text editor with a Swing GUI. It lets you load and save your text to files. 
    It also has a text search function with an optional regex mode.
-6. **Game of Life**  
-Conway's Game of Life cellular automaton. With a Swing gui that enables the user to start 
-   and stop the simulation and step through it. The game and the gui run in separate threads.
+6. **[Game of Life](Game_of_Life)**  
+Conway's Game of Life cellular automaton. With a Swing GUI that enables the user to start 
+   and stop the simulation and step through it. The simulation and the GUI run in separate 
+   threads.
 7. **Guess the Animal**  
 This is a little game where the computer tries to guess which animal you are thinking of 
    via a series of yes/no questions. If it fails to give a correct answer it learns a new 
