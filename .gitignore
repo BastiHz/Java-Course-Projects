@@ -1,4 +1,5 @@
 *.db
+gradle_project_template/
 
 
 # Java
