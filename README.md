@@ -13,8 +13,8 @@ I advise against importing this repository from GitHub as one ide project. This 
 ### Projects
 This list is sorted chronologically. The projects at the top are my first ever Java apps and are therefore very simple and probably written in a bad and inefficient style. Please take that into account when checking out the code.
 
-1. **Coffee Machine**  
-A simple terminal app which simulates a coffee machine. You can order a hot beverage, inspect and fill up the stored ingredients, and collect the money.
+1. **[Coffee Machine](Coffee_Machine)**  
+My first Java project. A simple console app that simulates a coffee machine.
 2. **[Tic-Tac-Toe with AI](Tic-Tac-Toe_with_AI)**  
 A tic-tac-toe app for the terminal. It lets you play either against another human or the computer. It is also possible to watch the computer play against itself. The computer has three difficulty levels. The easiest makes random moves, medium looks one move ahead, and the hardest uses the minimax algorithm.
 3. **Sorting Tool**  
