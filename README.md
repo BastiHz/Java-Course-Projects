@@ -28,8 +28,8 @@ A tic-tac-toe app for the terminal. It lets you play either against another huma
 3. **[Sorting Tool](Sorting_Tool)**  
 This application sorts your inputs either naturally or by count. It can read the values from 
    the command line or a file and output the result either to the command line or a file.
-4. **Smart Calculator**  
-A terminal calculator. It supports addition, subtraction, multiplication, integer division, 
+4. **[Smart Calculator](Smart_Calculator)**  
+A calculator for the console. It supports addition, subtraction, multiplication, integer division, 
    and exponentiation. You can assign variables and group operations using parentheses.
 5. **Text Editor**  
 This is a simple text editor with a Swing gui. It lets you load and save your text to files. 

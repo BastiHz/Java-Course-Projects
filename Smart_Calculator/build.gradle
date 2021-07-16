@@ -1,0 +1,20 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+}
+
+application {
+    mainClass= 'smartcalculator.Main'
+}
+
+run {
+    // Wait for input when using System.in.
+    standardInput = System.in
+}
