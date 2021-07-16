@@ -17,7 +17,7 @@ It defaults to `-sortingType natural -dataType word` when no arguments are given
 If no inputfile was specified, the program waits for data to be entered into the 
 console. Data can be entered separated by spaces or line breaks, except for 
 `-dataType line`, which requires line breaks. To end the data entry 
-send a line break followed by an EOF (Ctrl + D on Linux or Ctrl + Z on Windows).
+send a line break followed by an EOF (Ctrl&nbsp;+&nbsp;D on Linux or Ctrl&nbsp;+&nbsp;Z on Windows).
 
 Sorting numbers naturally:
 ```
