@@ -11,5 +11,10 @@ dependencies {
 }
 
 application {
-    mainClass = 'coffeemachine.App'
+    mainClass = 'coffeemachine.CoffeeMachine'
+}
+
+run {
+    // Wait for input when using System.in.
+    standardInput = System.in
 }
