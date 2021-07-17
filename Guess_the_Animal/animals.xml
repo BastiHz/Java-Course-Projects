@@ -1,0 +1,15 @@
+<TreeNode>
+  <data>It can fly to space.</data>
+  <yes>
+    <data>a human</data>
+  </yes>
+  <no>
+    <data>It is living in the ocean.</data>
+    <yes>
+      <data>a mantis shrimp</data>
+    </yes>
+    <no>
+      <data>a gorilla</data>
+    </no>
+  </no>
+</TreeNode>

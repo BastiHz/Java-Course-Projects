@@ -38,8 +38,8 @@ This is a basic text editor with a Swing GUI. It lets you load and save your tex
 Conway's Game of Life cellular automaton. With a Swing GUI that enables the user to start 
    and stop the simulation and step through it. The simulation and the GUI run in separate 
    threads.
-7. **Guess the Animal**  
-This is a little game where the computer tries to guess which animal you are thinking of 
+7. **[Guess the Animal](Guess_the_Animal)**  
+This is a guessing game where the computer tries to guess which animal you are thinking of 
    via a series of yes/no questions. If it fails to give a correct answer it learns a new 
    animal and a fact to differentiate it from others. The data is stored in a binary tree. 
    Between runs this tree is serialized to either json, xml or yaml. In this project I also 

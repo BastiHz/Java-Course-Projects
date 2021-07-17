@@ -1,0 +1,24 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.4'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.12.4'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.4'
+}
+
+application {
+    mainClass = 'guesstheanimal.Main'
+}
+
+run {
+    // Wait for input when using System.in.
+    standardInput = System.in
+}
+
+sourceCompatibility = '11'

@@ -1,0 +1,10 @@
+---
+data: "It is a fish."
+"yes":
+  data: "It can jump up waterfalls."
+  "yes":
+    data: "a salmon"
+  "no":
+    data: "a halibut"
+"no":
+  data: "a monkey"

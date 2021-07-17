@@ -1,0 +1,21 @@
+{
+  "data" : "It can fly.",
+  "yes" : {
+    "data" : "It is a mammal.",
+    "yes" : {
+      "data" : "a bat"
+    },
+    "no" : {
+      "data" : "a bird"
+    }
+  },
+  "no" : {
+    "data" : "It has legs.",
+    "yes" : {
+      "data" : "a cat"
+    },
+    "no" : {
+      "data" : "a snake"
+    }
+  }
+}
