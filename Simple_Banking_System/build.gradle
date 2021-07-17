@@ -1,0 +1,22 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.xerial:sqlite-jdbc:3.36.0.1'
+}
+
+application {
+    mainClass = 'banking.Main'
+}
+
+run {
+    // Wait for input when using System.in.
+    standardInput = System.in
+}
+
+sourceCompatibility = '11'
