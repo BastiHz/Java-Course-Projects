@@ -6,10 +6,8 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-
-}
-
 application {
     mainClass = 'texteditor.Main'
 }
+
+sourceCompatibility = '11'

@@ -6,10 +6,6 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-
-}
-
 application {
     mainClass = 'sortingtool.Main'
 }
@@ -18,3 +14,5 @@ run {
     // Wait for input when using System.in.
     standardInput = System.in
 }
+
+sourceCompatibility = '11'
