@@ -6,7 +6,7 @@ A Spring Boot application that provides a REST API for a database containing rec
 
 The server listens on `http://localhost:8080`.
 
-You need to register a user to interact with the recipes database.
+You need to register a user to interact with the database.
 All users can read all recipes, but only the user who added a recipe 
 can modify or delete it. The authentication method used is basic authentication.
 
