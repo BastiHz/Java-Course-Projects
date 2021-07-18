@@ -48,11 +48,10 @@ This is a guessing game where the computer tries to guess which animal you are t
 A console app that lets you open bank accounts and deposit or transfer money. 
    Card numbers are generated and validated with the Luhn algorithm. The data are stored locally
    in an SQLite database. This very simple program was my introduction to SQL.
-9. **Web Quiz Engine**  
+9. **[Web Quiz Engine](Web_Quiz_Engine)**  
 A REST API built with Spring Boot. It can register and authenticate users. Users can submit 
    quizzes, solve them, and delete them. It is possible to get paginated lists of all stored 
-   quizzes and quiz completions per user. The data is stored in a database. There is no user 
-   interface so you have to use the console or e.g. Postman to interact with the api.
+   quizzes and quiz completions per user. The data is stored in a database.
 10. **Code Sharing Platform**  
 In this project I am using Spring Boot to learn how to combine the backend and frontend by 
     building a platform where users can share code snippets. You can access it in the browser 
