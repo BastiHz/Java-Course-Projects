@@ -12,7 +12,7 @@ public enum Response {
     private final boolean success;
     private final String feedback;
 
-    Response(boolean success, String feedback) {
+    Response(final boolean success, final String feedback) {
         this.success = success;
         this.feedback = feedback;
     }

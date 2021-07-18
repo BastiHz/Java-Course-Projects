@@ -31,17 +31,18 @@ public class QuizController {
     private CompletionRepository completionRepository;
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    Quiz addQuiz(@RequestBody @Valid Quiz quiz, Principal principal) {
-        User user = userRepository.findByEmail(principal.getName());
+    Map<String, Integer> addQuiz(@RequestBody @Valid final Quiz quiz, final Principal principal) {
+        final User user = userRepository.findByEmail(principal.getName());
         quiz.setUser(user);
-        return quizRepository.save(quiz);
+        quizRepository.save(quiz);
+        return Map.of("id", quiz.getId());
     }
 
     @DeleteMapping(path = "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void deleteQuiz(@PathVariable int id, Principal principal) {
-        User user = userRepository.findByEmail(principal.getName());
-        Quiz quiz = quizRepository.findById(id).orElseThrow();
+    void deleteQuiz(@PathVariable final int id, final Principal principal) {
+        final User user = userRepository.findByEmail(principal.getName());
+        final Quiz quiz = quizRepository.findById(id).orElseThrow();
         if (user.getId() != quiz.getUser().getId()) {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN);
         }
@@ -49,40 +50,38 @@ public class QuizController {
     }
 
     @GetMapping
-    Page<Quiz> getAllQuizzes(@RequestParam(defaultValue = "0") Integer page) {
-        Pageable pageable = PageRequest.of(page, 10, Sort.by("id"));
+    Page<Quiz> getQuizzes(@RequestParam(defaultValue = "0") final Integer page) {
+        final Pageable pageable = PageRequest.of(page, 10, Sort.by("id"));
         return quizRepository.findAll(pageable);
     }
 
     @GetMapping(path = "/{id}")
-    Quiz getQuiz(@PathVariable @Min(0) int id) {
+    Quiz getQuiz(@PathVariable @Min(0) final int id) {
         return quizRepository.findById(id).orElseThrow();
     }
 
     @GetMapping(path = "/completed")
-    Page<QuizCompletion> getCompletions(
-            @RequestParam(defaultValue = "0") Integer page,
-            Principal principal) {
-        User user = userRepository.findByEmail(principal.getName());
-        Pageable pageable = PageRequest.of(page, 10, Sort.by("completedAt").descending());
+    Page<QuizCompletion> getCompletions(@RequestParam(defaultValue = "0") final Integer page,
+                                        final Principal principal) {
+        final User user = userRepository.findByEmail(principal.getName());
+        final Pageable pageable = PageRequest.of(page, 10, Sort.by("completedAt").descending());
         return completionRepository.findByUser(user, pageable);
     }
 
     @PostMapping(path = "/{id}/solve")
-    Response checkAnswer(
-            @PathVariable @Min(0) int id,
-            @RequestBody Answer answer, Principal principal) {
-        Quiz quiz = quizRepository.findById(id).orElseThrow();
-        User user = userRepository.findByEmail(principal.getName());
-        boolean isCorrect = isAnswerCorrect(quiz.getAnswer(), answer.getAnswer());
-        if (isCorrect) {
+    Response solveQuiz(@PathVariable @Min(0) final int id,
+                       @RequestBody final Answer answer,
+                       final Principal principal) {
+        final Quiz quiz = quizRepository.findById(id).orElseThrow();
+        final User user = userRepository.findByEmail(principal.getName());
+        if (checkAnswer(quiz.getAnswer(), answer.getAnswer())) {
             completionRepository.save(new QuizCompletion(quiz.getId(), user));
             return Response.CORRECT_ANSWER;
         }
         return Response.WRONG_ANSWER;
     }
 
-    private boolean isAnswerCorrect(List<Integer> expected, List<Integer> given) {
+    private static boolean checkAnswer(List<Integer> expected, List<Integer> given) {
         if (expected == null && given == null) {
             return true;
         } else if (given == null) {

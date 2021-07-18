@@ -27,17 +27,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        final DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
         authProvider.setUserDetailsService(userDetailsService());
         authProvider.setPasswordEncoder(passwordEncoder());
         return authProvider;
     }
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    protected void configure(final HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-            .antMatchers("/api/register/**", "/actuator/shutdown/**", "/h2-console/**")
+            .antMatchers("/api/register/**", "/actuator/shutdown/**", "/h2/**")
             .permitAll()
             .anyRequest().authenticated()
             .and()

@@ -22,11 +22,11 @@ public class UserRegistrationController {
     private PasswordEncoder passwordEncoder;
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    void register(@RequestBody @Valid User user) {
+    void register(@RequestBody @Valid final User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         try {
             userRepository.save(user);
-        } catch (Exception e) {
+        } catch (final Exception e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
     }

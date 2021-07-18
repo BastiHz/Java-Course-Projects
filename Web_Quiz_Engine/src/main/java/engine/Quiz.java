@@ -56,7 +56,7 @@ public class Quiz {
     // Using @JsonProperty for the setter enables setting it with @RequestBody.
     // This seems to be necessary because of the @JsonIgnore above the getter.
     @JsonProperty
-    public void setAnswer(List<Integer> answer) {
+    public void setAnswer(final List<Integer> answer) {
         this.answer = answer;
     }
 
@@ -65,7 +65,7 @@ public class Quiz {
         return answer;
     }
 
-    public void setUser(User user) {
+    public void setUser(final User user) {
         this.user = user;
     }
 

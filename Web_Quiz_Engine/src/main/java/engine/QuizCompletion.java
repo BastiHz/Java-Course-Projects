@@ -20,7 +20,7 @@ public class QuizCompletion {
 
     public QuizCompletion() {}
 
-    public QuizCompletion(int id, User user) {
+    public QuizCompletion(final int id, final User user) {
         this.id = id;
         this.user = user;
         this.completedAt = LocalDateTime.now();
