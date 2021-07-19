@@ -53,11 +53,12 @@ that into account when checking out the code.
     You can register and authenticate users, submit quizzes, solve, and delete them.
     It is possible to get paginated lists of all stored quizzes and quiz completions per user.
     The data is stored in a local database.
-10. **Code Sharing Platform**  
-    In this project I am using Spring Boot to learn how to combine the backend and frontend by 
-    building a platform where users can share code snippets. You can access it in the browser 
-    to create new code snippets, see the latest codes and access specific codes by uuid. Codes 
-    are optionally access restricted by number of views or with a time limit.
+10. **[Code Sharing Platform](Code_Sharing_Platform)**  
+    In this project I am using Spring Boot to learn how to combine the backend and frontend by
+    building a platform where users can share code snippets. You can access it in the browser
+    to create new code snippets, see the latest codes, and access specific codes by ID. Code
+    snippets are optionally access restricted by number of views or with a time limit. The data
+    is stored in a local database file.
 11. **[Car Sharing](Car_Sharing)**  
     A simple command line app that simulates a car sharing service. I used this
     project to repeat how to do SQL queries with JDBC.
