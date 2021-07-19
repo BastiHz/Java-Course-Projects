@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @RestController
 @RequestMapping(path = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -15,7 +16,7 @@ public class ApiController {
     private CodeService codeService;
 
     @GetMapping(path = "/code/{id}")
-    public Code getCodeById(@PathVariable final String id) {
+    public Code getCodeById(@PathVariable final UUID id) {
         return codeService.getCodeById(id);
     }
 
@@ -25,8 +26,8 @@ public class ApiController {
     }
 
     @PostMapping(path = "/code/new", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Map<String, String> addCode(@RequestBody final Code Code) {
-        final String id = codeService.addCode(Code);
+    public Map<String, UUID> addCode(@RequestBody final Code Code) {
+        final UUID id = codeService.addCode(Code);
         return Map.of("id", id);
     }
 }

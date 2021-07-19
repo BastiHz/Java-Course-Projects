@@ -18,7 +18,7 @@ public class Code {
 
     @Id
     @JsonIgnore
-    private final String id = UUID.randomUUID().toString();
+    private final UUID id = UUID.randomUUID();
     @Type(type = "text")  // otherwise the column is varchar(255) which is too small
     private String code;
     private final LocalDateTime date = LocalDateTime.now();
@@ -29,7 +29,7 @@ public class Code {
     @JsonIgnore
     private boolean timeRestricted = false;
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 

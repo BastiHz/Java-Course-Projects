@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @Controller  // needs to be @Controller not @RestController or else templates won't load
 @RequestMapping(produces = MediaType.TEXT_HTML_VALUE)
 public class WebController {
@@ -14,7 +16,7 @@ public class WebController {
     private CodeService codeService;
 
     @GetMapping(path = "/code/{id}")
-    public String getCodeById(@PathVariable final String id, final Model model) {
+    public String getCodeById(@PathVariable final UUID id, final Model model) {
         model.addAttribute("code", codeService.getCodeById(id));
         return "code";
     }
