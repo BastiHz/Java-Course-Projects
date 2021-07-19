@@ -1,0 +1,25 @@
+body {
+    margin-left: 20px;
+    font-size: large;
+    font-family: monospace;
+    margin-top: 30px;
+}
+
+#load_date {
+    color: #1c6b0c;
+}
+
+#code_snippet {
+    background-color: #f0f0f0;
+    border: 1px solid #105fb3;
+    width: 120ch;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+#load_date,
+#views_restriction,
+#time_restriction {
+    padding-left: 10px;
+}

@@ -1,0 +1,25 @@
+table,
+#code_snippet {
+    margin-left: 20px;
+}
+
+#code_snippet {
+    font-size: large;
+    margin-top: 30px;
+    padding: 5px;
+    border: 1px solid #105fb3;
+    width: 120ch;
+}
+
+table,
+#send_snippet {
+    margin-top: 15px;
+}
+
+#send_snippet {
+    font-weight: bold;
+}
+
+label {
+    padding-right: 10px;
+}
