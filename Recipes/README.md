@@ -34,14 +34,14 @@ The H2 console is available via a webbrowser at `http://localhost:8080/h2`. Ther
 To login set JDBC URL to `jdbc:h2:file:./recipes_db` and User Name to `user`. No password.
 
 This is an example message body for registering a user. The email must contain "@" and "." and the password must be at least 8 characters long.
-```
+```json
 {
     "email": "foo@example.com",
     "password": "abcdefgh"
 }
 ```
 This is an example message body for a recipe. Name, category and description are strings. Ingredients and directions are string arrays.
-```
+```json
 {
    "name": "Fresh Mint Tea",
    "category": "beverage",

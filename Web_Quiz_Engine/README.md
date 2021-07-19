@@ -33,14 +33,14 @@ To login set JDBC URL to `jdbc:h2:file:./quizdb` and User Name to `user`. No pas
 
 
 This is an example message body for registering a user. The email must contain "@" and "." and the password must be at least 8 characters long.
-```
+```json
 {
     "email": "foo@example.com",
     "password": "abcdefgh"
 }
 ```
 This is an example message body for a quiz. Title and text are strings, options is a string array and answer is an integer array.
-```
+```json
 {
     "title": "Coffee drinks",
     "text": "Select only coffee drinks.",
@@ -49,20 +49,20 @@ This is an example message body for a quiz. Title and text are strings, options 
 }
 ```
 This would be the correct answer body for the above quiz.
-```
+```json
 {
     "answer": [0, 2]
 }
 ```
 And the response would be this.
-```
+```json
 {
     "success": true,
     "feedback": "Congratulations, you're right!"
 }
 ```
 A quiz completion looks like this.
-```
+```json
 {
     "id": 6,
     "completedAt": "2021-07-18T13:57:41.561792"
