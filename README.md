@@ -58,8 +58,9 @@ that into account when checking out the code.
     building a platform where users can share code snippets. You can access it in the browser 
     to create new code snippets, see the latest codes and access specific codes by uuid. Codes 
     are optionally access restricted by number of views or with a time limit.
-11. **Car Sharing**  
-    A simple command line app using SQL.
+11. **[Car Sharing](Car_Sharing)**  
+    A simple command line app that simulates a car sharing service. I used this
+    project to repeat how to do SQL queries with JDBC.
 12. **[Recipes](Recipes)**  
     A Spring Boot app that provides a REST API to manage recipes in a database. You can register 
     users, save recipes, get recipes, and modify them.

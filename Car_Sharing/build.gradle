@@ -1,0 +1,22 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.h2database:h2:1.4.200'
+}
+
+application {
+    mainClass = 'carsharing.Main'
+}
+
+run {
+    // Wait for input when using System.in.
+    standardInput = System.in
+}
+
+sourceCompatibility = '11'
