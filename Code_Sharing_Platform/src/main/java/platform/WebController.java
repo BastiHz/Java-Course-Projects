@@ -15,6 +15,11 @@ public class WebController {
     @Autowired
     private CodeService codeService;
 
+    @GetMapping(path = "/code/new")
+    public String addCode() {
+        return "create";
+    }
+
     @GetMapping(path = "/code/{id}")
     public String getCodeById(@PathVariable final UUID id, final Model model) {
         model.addAttribute("code", codeService.getCodeById(id));
@@ -22,13 +27,8 @@ public class WebController {
     }
 
     @GetMapping(path = "/code/latest")
-    public String getLatestCodes(final Model model) {
+    public String get10LatestCodes(final Model model) {
         model.addAttribute("codes", codeService.getLatestCodes());
         return "latest";
-    }
-
-    @GetMapping(path = "/code/new")
-    public String getCodeNew() {
-        return "create";
     }
 }
