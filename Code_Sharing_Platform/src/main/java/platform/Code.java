@@ -84,8 +84,7 @@ public class Code {
         return timeRestricted;
     }
 
-    boolean isInaccessible() {
-        return viewRestricted && views <= 0
-            || timeRestricted && getTime() <= 0;
+    boolean isAccessible() {
+        return (!viewRestricted || views > 0) && (!timeRestricted || getTime() > 0);
     }
 }

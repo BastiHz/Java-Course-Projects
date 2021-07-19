@@ -20,12 +20,12 @@ public class CodeService {
 
     public Code getCodeById(final UUID id) {
         final Code code = codeRepository.findById(id).orElseThrow();
-        if (code.isInaccessible()) {
-            throw new NoSuchElementException();
+        if (code.isAccessible()) {
+            code.updateViews();
+            codeRepository.save(code);  // update with new number of views left
+            return code;
         }
-        code.updateViews();
-        codeRepository.save(code);  // update with new number of views left
-        return code;
+        throw new NoSuchElementException();
     }
 
     public List<Code> getLatestCodes() {
